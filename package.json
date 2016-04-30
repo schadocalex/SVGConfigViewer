@@ -1,0 +1,31 @@
+{
+  "name": "svg-config-viewer",
+  "version": "0.1.0",
+  "description": "SVG config viewer",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^3.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schadocalex/SVGConfigViewer.git"
+  },
+  "keywords": [
+    "SVG",
+    "config",
+    "viewer"
+  ],
+  "author": "<Alexis, schadoc_alex@hotmail.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schadocalex/SVGConfigViewer/issues"
+  },
+  "homepage": "https://github.com/schadocalex/SVGConfigViewer#readme"
+}

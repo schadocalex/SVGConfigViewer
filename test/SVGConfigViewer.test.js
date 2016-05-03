@@ -4,11 +4,10 @@ describe("SVGConfigViewer", function() {
     var obj = {
         data: {
             background: {
-                visible: true,
-                src: "http://placehold.it/350x150"
+                src: ""
             },
             door: {
-                visible: true,
+                opacity: 1,
                 color1: "red",
                 color2: "black"
             }
@@ -16,25 +15,38 @@ describe("SVGConfigViewer", function() {
         cfg: {
             background: {
                 src: {
-                    selector: "#background",
                     property: "background-image",
+                    selector: "#background",
                     transition: "none"
                 }
             },
             door: {
+                opacity: {
+                    selector: "#door",
+                    property: "opacity",
+                    transition: "fade",
+                    easing: "ease",
+                    duration: 1000
+                },
                 color1: {
                     selector: "#door .part1",
                     property: "fill",
                     transition: "fade",
-                    easing: "ease"
+                    easing: "ease",
+                    duration: 500
                 },
                 color2: {
                     selector: "#door .part2",
                     property: "background-image",
                     transition: "fade",
-                    easing: "ease"
+                    easing: "ease",
+                    duration: 500
                 }
             }
         }
     };
+
+    var viewer = new SVGConfigViewer(obj);
+    viewer.background.src = "http://placehold.it/350x150";
+    viewer.door.color1 = "blue";
 });

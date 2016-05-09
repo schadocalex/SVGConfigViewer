@@ -6,7 +6,7 @@ define(["SVG"], function (SVG) {
         /**
          * Used to manipulate a svg image
          */
-        this.svg = new SVG(parent || document.body, cfg.svg);
+        this.svg = new SVG(cfg.src, parent);
 
         /**
          * Intern save of the data object. The new data object will be dirty checked with this object.
@@ -55,7 +55,7 @@ define(["SVG"], function (SVG) {
         };
 
         // If a binding is in the config, bind properties
-        if(cfg != null) {
+        if(cfg.binding != null) {
             oldValue = this._convertValueWithBinding(cfg.binding, oldValue);
             newValue = this._convertValueWithBinding(cfg.binding, newValue);
         }

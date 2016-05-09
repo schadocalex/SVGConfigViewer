@@ -2,9 +2,17 @@
  * Created by Alexis on 01/05/2016.
  */
 define([], function () {
-    function SVG(parent, svg) {
-        var el = parent.appendChild(Snap.parse(svg).node);
-        this.paper = Snap(el);
+    function SVG(path, parent) {
+        parent = parent || document.body;
+
+        ajax({
+            method: "get",
+            url: path
+        }).then(function(svg) {
+            var el = parent.appendChild(document.createElement("div"));
+            el.innerHTML = svg;
+            this.paper = Snap(el.children[0]);
+        }.bind(this));
     }
 
     SVG.prototype.animate = function(oldValue, newValue, cfg) {

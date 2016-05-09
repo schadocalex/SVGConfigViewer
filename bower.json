@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "Snap.svg": "snap.svg#~0.4.1",
-    "requirejs": "^2.2.0"
+    "requirejs": "^2.2.0",
+    "ajax": "^2.0.1"
   }
 }

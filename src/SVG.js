@@ -1,7 +1,7 @@
 /**
  * Created by Alexis on 01/05/2016.
  */
-define([], function () {
+define(["ajax", "Snap"], function (ajax, Snap) {
     function SVG(path, parent) {
         parent = parent || document.body;
 

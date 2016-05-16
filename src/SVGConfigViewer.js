@@ -38,7 +38,7 @@ define(["SVG"], function (SVG) {
     };
 
     /**
-     * Change the property with animation to its new value calling svg element.
+     * Change the property with animation to its new value.
      * @param name
      * @param oldValue
      * @param newValue
@@ -70,7 +70,7 @@ define(["SVG"], function (SVG) {
 
     /**
      * Convert a value with the binding object. If binding[value] is present, this function returns it.
-     * Else it takes the default value in bindings["*"] (if it exist).
+     * Else it takes the default value in bindings["*"] (if it exists).
      * @param binding
      * @param value
      * @returns {*}

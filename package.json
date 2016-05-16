@@ -2,15 +2,18 @@
   "name": "svg-config-viewer",
   "version": "0.1.0",
   "description": "SVG config viewer",
-  "main": "index.html",
+  "main": "dist/SVGConfigViewer.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "chai": "^3.5.0",
-    "requirejs": "^2.2.0"
+    "@fdaciuk/ajax": "^2.1.2",
+    "snapsvg": "^0.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0"
+  },
   "scripts": {
     "test": "mocha"
   },

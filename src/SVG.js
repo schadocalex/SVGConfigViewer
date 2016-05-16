@@ -1,33 +1,34 @@
 /**
  * Created by Alexis on 01/05/2016.
  */
-define(["ajax", "Snap"], function (ajax, Snap) {
-    function SVG(path, parent) {
-        parent = parent || document.body;
+var ajax = require("@fdaciuk/ajax");
+var Snap = require("snapsvg");
 
-        ajax({
-            method: "get",
-            url: path
-        }).then(function(svg) {
-            var el = parent.appendChild(document.createElement("div"));
-            el.innerHTML = svg;
-            this.paper = Snap(el.children[0]);
-        }.bind(this));
-    }
+function SVG(path, parent) {
+    parent = parent || document.body;
 
-    SVG.prototype.animate = function(oldValue, newValue, cfg) {
-        // Get the element with the selector
-        var el = this.paper.select(cfg.selector);
+    ajax({
+        method: "get",
+        url: path
+    }).then(function(svg) {
+        var el = parent.appendChild(document.createElement("div"));
+        el.innerHTML = svg;
+        this.paper = Snap(el.children[0]);
+    }.bind(this));
+}
 
-        // Create params
-        var attr = {};
-        attr[cfg.property] = newValue;
-        var duration = cfg.duration || 0;
-        var easing = mina[cfg.easing] || mina.linear;
+SVG.prototype.animate = function(oldValue, newValue, cfg) {
+    // Get the element with the selector
+    var el = this.paper.select(cfg.selector);
 
-        // Animate
-        el.animate(attr, duration, easing);
-    };
+    // Create params
+    var attr = {};
+    attr[cfg.property] = newValue;
+    var duration = cfg.duration || 0;
+    var easing = mina[cfg.easing] || mina.linear;
 
-    return SVG;
-});
+    // Animate
+    el.animate(attr, duration, easing);
+};
+
+module.exports = SVG;
